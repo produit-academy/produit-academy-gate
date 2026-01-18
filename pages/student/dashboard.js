@@ -14,20 +14,21 @@ export default function StudentDashboard() {
   const [courseReq, setCourseReq] = useState(null);
   const [recentTests, setRecentTests] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [historyLoading, setHistoryLoading] = useState(true);
 
   useEffect(() => {
     const loadDashboard = async () => {
+      // 1. Load Critical Data first (User & Status)
+      let userData = null;
       try {
-        const [userRes, reqRes, historyRes] = await Promise.all([
+        const [userRes, reqRes] = await Promise.all([
           apiFetch('/api/student/dashboard/'),
-          apiFetch('/api/courserequest/'),
-          apiFetch('/api/student/tests/history/')
+          apiFetch('/api/courserequest/')
         ]);
 
         if (userRes.ok) {
-          const userData = await userRes.json();
+          userData = await userRes.json();
           setUser(userData);
-
           if (!userData.college || !userData.phone_number) {
             router.push('/student/complete-profile');
             return;
@@ -37,18 +38,22 @@ export default function StudentDashboard() {
           const reqs = await reqRes.json();
           if (reqs.length > 0) setCourseReq(reqs[0]);
         }
+      } catch (e) { console.error("Critical Load Error", e); }
+      finally { setLoading(false); }
+
+      // 2. Load History independently (doesn't block UI)
+      try {
+        const historyRes = await apiFetch('/api/student/tests/history/');
         if (historyRes.ok) {
           const history = await historyRes.json();
           setRecentTests(history.slice(0, 3));
         }
-      } catch (err) {
-        console.error("Dashboard Load Error:", err);
-      } finally {
-        setLoading(false);
-      }
+      } catch (e) { console.error("History Load Error", e); }
+      finally { setHistoryLoading(false); }
     };
     loadDashboard();
   }, [router]);
+
 
   const isApproved = courseReq?.status === 'Approved';
 
@@ -145,7 +150,9 @@ export default function StudentDashboard() {
                 )}
               </div>
 
-              {recentTests.length > 0 ? (
+              {historyLoading ? (
+                <div style={{ padding: '20px', textAlign: 'center', color: '#666' }}>Loading past results...</div>
+              ) : recentTests.length > 0 ? (
                 <div style={{ overflowX: 'auto' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '500px' }}>
                     <thead>

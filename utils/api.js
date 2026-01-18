@@ -30,6 +30,7 @@ export const generateMockTest = (testConfig) => API.post('/student/tests/generat
 export const fetchTestSession = (testId) => API.get(`/student/tests/${testId}/session/`);
 export const submitMockTest = (testId, answers) => API.post(`/student/tests/${testId}/submit/`, { answers });
 export const fetchTestAnalytics = (testId) => API.get(`/student/tests/${testId}/analytics/`);
+export const fetchTestQuestions = (testId, page = 1) => API.get(`/student/tests/${testId}/questions/?page=${page}`);
 export const fetchTestHistory = () => API.get('/student/tests/history/');
 
 // --- ADMIN: CATEGORY MANAGEMENT ---

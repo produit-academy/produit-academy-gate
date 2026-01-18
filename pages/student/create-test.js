@@ -137,20 +137,29 @@ export default function CreateTest() {
                             <div style={{ marginBottom: '25px' }}>
                                 <label style={{ display: 'block', marginBottom: '10px', fontWeight: 'bold' }}>Select Topics (Optional)</label>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                                    {fixedCategories.map(cat => (
-                                        <div key={cat.id}
-                                            onClick={() => toggleCat(cat.id)}
-                                            style={{
-                                                padding: '8px 15px', borderRadius: '20px', cursor: 'pointer',
-                                                border: '1px solid #0070f3',
-                                                background: selectedCategories.includes(cat.id) ? '#0070f3' : 'white',
-                                                color: selectedCategories.includes(cat.id) ? 'white' : '#0070f3',
-                                                transition: 'all 0.2s'
-                                            }}
-                                        >
-                                            {cat.name}
-                                        </div>
-                                    ))}
+                                    {fixedCategories
+                                        .filter(cat => {
+                                            // Check if selected branch is Architecture
+                                            const branch = branches.find(b => b.id == selectedBranch);
+                                            if (branch && branch.name.toLowerCase().includes('architecture')) {
+                                                if (cat.name === 'Engineering Mathematics') return false;
+                                            }
+                                            return true;
+                                        })
+                                        .map(cat => (
+                                            <div key={cat.id}
+                                                onClick={() => toggleCat(cat.id)}
+                                                style={{
+                                                    padding: '8px 15px', borderRadius: '20px', cursor: 'pointer',
+                                                    border: '1px solid #0070f3',
+                                                    background: selectedCategories.includes(cat.id) ? '#0070f3' : 'white',
+                                                    color: selectedCategories.includes(cat.id) ? 'white' : '#0070f3',
+                                                    transition: 'all 0.2s'
+                                                }}
+                                            >
+                                                {cat.name}
+                                            </div>
+                                        ))}
 
                                 </div>
                             </div>

@@ -17,9 +17,11 @@
     "@capacitor/status-bar": "^8.0.0",
     "axios": "^1.13.2",
     "framer-motion": "^12.23.13",
+    "katex": "^0.16.27",
     "next": "^15.5.7",
     "react": "^19.1.2",
     "react-dom": "^19.1.2",
+    "react-latex-next": "^3.0.0",
     "react-pdf": "^10.2.0",
     "swiper": "^12.0.1"
   },

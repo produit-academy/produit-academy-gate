@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import Latex from 'react-latex-next';
+import 'katex/dist/katex.min.css';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -195,7 +197,7 @@ export default function AttemptTest() {
                     </div>
 
                     <div className={styles.questionText}>
-                        {currentQ.question_text}
+                        <Latex>{currentQ.question_text}</Latex>
                         {currentQ.question_image && <div style={{ margin: '15px 0' }}><img src={currentQ.question_image} alt="Question" style={{ maxWidth: '100%', maxHeight: '400px' }} /></div>}
                     </div>
 
@@ -224,7 +226,7 @@ export default function AttemptTest() {
                                             onChange={() => handleMSQSelect(currentQ.question_id, choice.id)}
                                             style={{ width: '20px', height: '20px', marginRight: '10px', cursor: 'pointer' }}
                                         />
-                                        <span>{choice.text}</span>
+                                        <span><Latex>{choice.text}</Latex></span>
                                     </div>
                                     {choice.image && <div style={{ marginLeft: '30px', marginTop: '5px' }}><img src={choice.image} alt="Option" style={{ maxWidth: '200px', maxHeight: '150px' }} /></div>}
                                 </label>
@@ -239,7 +241,7 @@ export default function AttemptTest() {
                                             checked={answers[currentQ.question_id] === choice.id}
                                             onChange={() => handleOptionSelect(currentQ.question_id, choice.id)}
                                         />
-                                        <span>{choice.text}</span>
+                                        <span><Latex>{choice.text}</Latex></span>
                                     </div>
                                     {choice.image && <div style={{ marginLeft: '30px', marginTop: '5px' }}><img src={choice.image} alt="Option" style={{ maxWidth: '200px', maxHeight: '150px' }} /></div>}
                                 </label>
