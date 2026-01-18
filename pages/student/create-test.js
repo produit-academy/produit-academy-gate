@@ -13,8 +13,8 @@ export default function CreateTest() {
     const [selectedBranch, setSelectedBranch] = useState('');
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedTypes, setSelectedTypes] = useState([]);
-    const [numQuestions, setNumQuestions] = useState(10);
-    const [timeLimit, setTimeLimit] = useState(15);
+    const [numQuestions, setNumQuestions] = useState(65);
+    const [timeLimit, setTimeLimit] = useState(180);
     const [allowRepeats, setAllowRepeats] = useState(true);
     const fixedCategories = [
         { id: 'General Aptitude', name: 'General Aptitude' },
@@ -181,7 +181,7 @@ export default function CreateTest() {
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '25px' }}>
                                 <div>
                                     <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Questions</label>
-                                    <input type="number" min="1" max="50" value={numQuestions} onChange={e => setNumQuestions(e.target.value)}
+                                    <input type="number" min="1" max="100" value={numQuestions} onChange={e => setNumQuestions(e.target.value)}
                                         style={{ width: '100%', padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />
                                 </div>
                                 <div>
