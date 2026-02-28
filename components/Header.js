@@ -110,7 +110,7 @@ export default function Header() {
             <Link href="/" passHref>
               <Image src="/logo.png" alt="Produit Academy Logo" width={40} height={40} priority />
             </Link>
-            <span className={styles.logoText}>Produit Academy</span>
+            <span className={styles.logoText}>Produit Academy GATE</span>
           </div>
 
           <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle menu">
