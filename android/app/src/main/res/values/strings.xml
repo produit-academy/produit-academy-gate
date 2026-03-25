@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">Produit Academy - Gate</string>
-    <string name="title_activity_main">Produit Academy</string>
-    <string name="package_name">com.produitacademy.app</string>
-    <string name="custom_url_scheme">com.produitacademy.app</string>
-</resources>
