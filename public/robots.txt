@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /student/
+Disallow: /materials/
+Disallow: /verify-email/
+Disallow: /profile/
+
+Sitemap: https://gate.produitacademy.com/sitemap.xml
