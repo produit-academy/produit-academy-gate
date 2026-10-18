@@ -6,6 +6,7 @@ import '../styles/globals.css';
 import '../styles/Home.css';
 import '../styles/Auth.css';
 import '../styles/Dashboard.css';
+import ChatbotWidget from '../components/ChatbotWidget';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -17,13 +18,17 @@ function MyApp({ Component, pageProps }) {
     };
     initMobile();
 
-    CapacitorApp.addListener('backButton', ({ canGoBack }) => {
+    const backListener = CapacitorApp.addListener('backButton', ({ canGoBack }) => {
       if (canGoBack) {
         window.history.back();
       } else {
         CapacitorApp.exitApp();
       }
     });
+    // Remove on unmount so the handler is never registered twice
+    return () => {
+      Promise.resolve(backListener).then((h) => h && h.remove && h.remove()).catch(() => {});
+    };
   }, []);
 
   return (
@@ -41,6 +46,7 @@ function MyApp({ Component, pageProps }) {
         <li>ε</li>
       </ul>
       <Component {...pageProps} />
+      <ChatbotWidget />
     </>
   );
 }
