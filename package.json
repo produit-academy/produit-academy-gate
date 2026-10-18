@@ -18,7 +18,7 @@
     "axios": "^1.13.2",
     "framer-motion": "^12.23.13",
     "katex": "^0.16.27",
-    "next": "^15.5.7",
+    "next": "^15.5.28",
     "react": "^19.1.2",
     "react-dom": "^19.1.2",
     "react-latex-next": "^3.0.0",
@@ -34,7 +34,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.5.3",
+    "eslint-config-next": "^15.5.28",
     "typescript": "^5.9.3"
   }
 }

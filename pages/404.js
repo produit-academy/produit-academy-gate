@@ -19,7 +19,7 @@ export default function Custom404() {
 
         <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#33ae78' }}>Page Not Found</h1>
         <p style={{ fontSize: '1.2rem', color: '#228B22', marginBottom: '2rem' }}>
-          We couldn't find the page you're looking for. It might be under construction or removed.
+          We couldn&apos;t find the page you&apos;re looking for. It might be under construction or removed.
         </p>
 
         <button
