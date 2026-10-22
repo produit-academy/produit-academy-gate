@@ -111,7 +111,7 @@ export default function AdminDashboard() {
                                 borderRadius: '6px', textDecoration: 'none', fontWeight: 'bold',
                                 boxShadow: '0 4px 6px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', gap: '8px'
                             }}>
-                                <img src="/student.png" alt="Exam" style={{ width: '30px', height: '30px', marginRight: '10px' }} />
+                                <img src="/student.png" alt="Students" style={{ width: '30px', height: '30px', marginRight: '10px' }} />
                                 Manage Students
                             </Link>
                         </div>
@@ -130,7 +130,7 @@ export default function AdminDashboard() {
                                     onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}
                                 >
                                     <div style={{ fontSize: '2rem', marginBottom: '10px' }}>
-                                        <img src="/bank.png" alt="Exam" style={{ width: '30px', height: '30px', marginRight: '10px' }} />
+                                        <img src="/bank.png" alt="Question Bank" style={{ width: '30px', height: '30px', marginRight: '10px' }} />
                                     </div>
                                     <h3 style={{ margin: '0 0 10px 0', color: '#0070f3' }}>Question Bank</h3>
                                     <p style={{ color: '#666', fontSize: '0.9rem', margin: 0 }}>

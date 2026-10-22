@@ -109,7 +109,7 @@ export default function StudentDashboard() {
               >
                 <h2 style={{ margin: '0 0 15px 0', display: 'flex', alignItems: 'center', fontSize: '1.4rem', color: '#333', whiteSpace: 'nowrap' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/materials.png" alt="Exam" style={{ width: '32px', height: '32px', marginRight: '12px', flexShrink: 0 }} />
+                  <img src="/materials.png" alt="Study Materials" style={{ width: '32px', height: '32px', marginRight: '12px', flexShrink: 0 }} />
                   Study Materials
                 </h2>
                 <p style={{ color: '#666', margin: 0 }}>Access Notes, PYQs, and One-shots for your branch.</p>
@@ -121,7 +121,7 @@ export default function StudentDashboard() {
               >
                 <h2 style={{ margin: '0 0 15px 0', display: 'flex', alignItems: 'center', fontSize: '1.4rem', color: '#333', whiteSpace: 'nowrap' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/analytics.png" alt="Exam" style={{ width: '32px', height: '32px', marginRight: '12px', flexShrink: 0 }} />
+                  <img src="/analytics.png" alt="Analytics and Results" style={{ width: '32px', height: '32px', marginRight: '12px', flexShrink: 0 }} />
                   Past Results
                 </h2>
                 <p style={{ color: '#666', margin: 0 }}>View detailed analytics and review answers.</p>

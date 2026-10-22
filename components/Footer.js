@@ -55,7 +55,7 @@ export default function Footer() {
 
       <div className={styles.footerBottom}>
         <div className={`container ${styles.footerBottomContainer}`}>
-          <p>Copyright @ 2025. All rights reserved.</p>
+          <p>Copyright © 2026 Produit Academy. All rights reserved.</p>
         </div>
       </div>
     </footer>
